@@ -33,6 +33,7 @@ function data() {
         pReg.innerText = `Captial: ${regions[i]}`;
         let code = document.createElement("p");
         let button = document.createElement("button");
+        button.setAttribute("value", `${countryCode[i]}`);
         button.innerText = "Click for Weather";
         h2.innerText = country[i];
         code.innerText = `Country Code: ${countryCode[i]}`;
@@ -44,13 +45,13 @@ function data() {
         cards[i].append(code);
         cards[i].append(button);
       }
-    }).catch ((err) => {
-        console.log(err)
-    }).finally(() => {
-        let buttons = document.querySelectorAll("button")
-        
+     
     })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 data();
+
 
 
