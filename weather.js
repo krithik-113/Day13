@@ -30,7 +30,7 @@ function data() {
         let pCap = document.createElement("p");
         pCap.innerText = `Captial: ${capital[i]}`;
         let pReg = document.createElement("p");
-        pReg.innerText = `Captial: ${regions[i]}`;
+        pReg.innerText = `Region: ${regions[i]}`;
         let code = document.createElement("p");
         let button = document.createElement("button");
         button.setAttribute("value", `${countryCode[i]}`);
