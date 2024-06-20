@@ -32,7 +32,7 @@ function data() {
         pReg.innerText = `Region: ${regions[i]}`;
         let code = document.createElement("p");
         let button = document.createElement("button");
-        button.setAttribute("value", `${country[i]}`);
+        button.setAttribute("value", `${capitals[i]}`);
         button.setAttribute("onclick","clicking(event.target.value)")
         button.innerText = "Click for Weather";
         h2.innerText = country[i];
@@ -52,21 +52,17 @@ function data() {
 }
 data();
 
-async function clicking(e) {
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${e}&appid=51ef6b17c072d286c74540e6648848bf&units=metric`
-  )
-    .then((response) => response.json())
-    .then((result) => {
-      if (e == 'South Korea') {
-        e= 'korea'
-      } else if (e == 'WALLIS AND FUTUNA') {
-        e = 'WALLIS';
-      }
-      alert(`Country:- ${e}
+function clicking(e) {
+ fetch(
+   `https://api.openweathermap.org/data/2.5/weather?q=${e}&appid=51ef6b17c072d286c74540e6648848bf&units=metric`
+ )
+   .then((response) => response.json())
+   .then((result) => {
+     alert(`City:- ${e}
 temp:- ${result.main.temp}%
 clouds:- ${result.weather[0].description}
-wind speed:- ${result.wind.speed}`)
-    })
-    .catch((err) => console.log(err));
+wind speed:- ${result.wind.speed}`);
+   })
+   .catch((err) => console.log(err));
+ 
 }
