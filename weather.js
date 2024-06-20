@@ -58,6 +58,11 @@ async function clicking(e) {
   )
     .then((response) => response.json())
     .then((result) => {
+      if (e == 'South Korea') {
+        e= 'korea'
+      } else if (e == 'WALLIS AND FUTUNA') {
+        e = 'WALLIS';
+      }
       alert(`Country:- ${e}
 temp:- ${result.main.temp}%
 clouds:- ${result.weather[0].description}
